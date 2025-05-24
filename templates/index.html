@@ -1,0 +1,12 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Funcionários</h2>
+    <a href="{{ url_for('add_funcionario') }}" class="btn btn-primary">Adicionar Funcionário</a>
+    <ul class="list-group mt-3">
+        {% for f in funcionarios %}
+            <li class="list-group-item">{{ f.nome }} - {{ f.email }} - {{ f.telefone }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
